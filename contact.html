@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Metro Sign</title>
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  padding-bottom: 100px;
+}
+
+#contact {
+  width: 100%;
+  height: 100%;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  max-width: 840px;
+}
+
+/* Left contact page */
+.form-horizontal {
+  /*float: left;*/
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+}
+
+/* Begin Right Contact Page */
+.direct-contact-container {
+  max-width: 400px;
+}
+
+/* Location, Phone, Email Section */
+.contact-list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 20px;
+}
+
+.list-item {
+  line-height: 4;
+  color: #aaa;
+}
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: #bbb;
+}
+
+.place {
+  margin-left: 62px;
+}
+
+.phone {
+  margin-left: 56px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  color: #bbb;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li a {
+  color: #fff;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 3px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: #000;
+}
+
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+hr {
+  border-color: rgba(255,255,255,.6);
+}
+
+/* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-contact-container, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+
+  .direct-contact-container, .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }  
+  .form-control, textarea {
+    
+    margin: 0 auto;
+  }
+ 
+  
+  .name, .email, textarea {
+    width: 280px;
+  } 
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 280px;
+  }  
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+  
+}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
+}
+    </style>
+  </head>
+  <body>
+    
+
+    <nav  class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.jpg" alt="" width="30" height="24">
+              </a>
+          <a class="navbar-brand" href="#"><b class="text-danger"><strong>Metro Sign</strong></b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+               
+                <a class="nav-link active" aria-current="page" href="about.html">About Company</a>
+              </li><li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="clients.html">Our Clients</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="portfolio.html">Work Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Deals In
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Glow Sign Board</a></li>
+                  <li><a class="dropdown-item" href="#">Led Sign Board</a></li>
+                  <li><a class="dropdown-item" href="#">Flex Sign Board</a></li>
+                  <li><a class="dropdown-item" href="#">Acrylic Sign Board</a></li>
+                  <li><a class="dropdown-item" href="#">Stainless Steel Name Plate</a></li>
+                  <li><a class="dropdown-item" href="#">ACP Sign Board</a></li>
+                  <li><a class="dropdown-item" href="#">Aceylic Name Plate And More...</a></li>
+                  
+                  <li><hr class="dropdown-divider"></li>
+                 
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+      <div  >
+        <section id="contact"  class="mt-5">
+  
+          <h1 class="section-header">Contact Us</h1>
+          
+          <div class="contact-wrapper">
+          
+          <!-- Left contact page --> 
+            
+            <form id="contact-form" class="form-horizontal" role="form">
+               
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="number" class="form-control" id="phone" placeholder="PHONE" name="phone" value="" required>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                </div>
+              </div>
+        
+              <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+              
+              <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                <div class="alt-send-button">
+                  <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                </div>
+              
+              </button>
+              
+            </form>
+            
+          <!-- Left contact page --> 
+            
+              <div class="direct-contact-container">
+        
+                <ul class="contact-list">
+                  
+                  
+                  <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:+91 98118 62383" title="Give me a call">+91 98118 62383</a></span></i></li>
+                  
+                  <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">metrosign24@gmail.com</a></span></i></li>
+                  
+                  <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">A-36, Sector-10,Noida-201301(UP)</span></i></li>
+
+                </ul>
+        
+                <hr>
+                <ul class="social-media-list">
+               
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>       
+                </ul>
+                <hr>
+        
+                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+        
+              </div>
+            
+          </div>
+          
+        </section>  
+          
+          
+      </div>
+
+
+
+
+      
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    
+    document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.phone.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
